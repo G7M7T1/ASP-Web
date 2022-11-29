@@ -1,6 +1,16 @@
 using System;
+using Web4_Routing.CustomConstraints;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+// add ConstraintMap
+builder.Services.AddRouting(options =>
+{
+    options.ConstraintMap.Add("months", typeof(MonthsCustomConstraint));
+});
+
+
 var app = builder.Build();
 
 app.UseRouting();
@@ -101,6 +111,15 @@ app.UseEndpoints(endpoints =>
 
     // Regex    age:regex(^[0-9]{2}$)
     endpoints.Map("sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}", async context =>
+    {
+        int year = Convert.ToInt32(context.Request.RouteValues["year"]);
+        string? month = Convert.ToString(context.Request.RouteValues["month"]);
+        await context.Response.WriteAsync($"You Are In sales report {year} - {month}");
+    });
+
+
+    // Regex    months
+    endpoints.Map("sales-report/{year:int:min(1900)}/{month:months}", async context =>
     {
         int year = Convert.ToInt32(context.Request.RouteValues["year"]);
         string? month = Convert.ToString(context.Request.RouteValues["month"]);
