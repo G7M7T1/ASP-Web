@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "I2+wT1dT7K0XJjQoVw1fBth7jToF+M4fHmd9dNqYF94=",
+  "Source": "Web4 StaticFIle",
+  "BasePath": "_content/Web4 StaticFIle",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Web4 StaticFIle\\wwwroot",
+      "Source": "Web4 StaticFIle",
+      "ContentRoot": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\",
+      "BasePath": "_content/Web4 StaticFIle",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\favicon.ico",
+      "SourceId": "Web4 StaticFIle",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\",
+      "BasePath": "_content/Web4 StaticFIle",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\GMT Logo1.png",
+      "SourceId": "Web4 StaticFIle",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\",
+      "BasePath": "_content/Web4 StaticFIle",
+      "RelativePath": "GMT Logo1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\GMT Logo1.png"
+    },
+    {
+      "Identity": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\logo.png",
+      "SourceId": "Web4 StaticFIle",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\ASP Web\\Web4 StaticFIle\\wwwroot\\",
+      "BasePath": "_content/Web4 StaticFIle",
+      "RelativePath": "logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo.png"
+    }
+  ]
+}
