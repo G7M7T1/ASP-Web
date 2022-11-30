@@ -58,7 +58,34 @@ namespace ControllersExample.Controllers
             };
             // return "{\"key\": \"value\"}"; // JSON
 
-            return new JsonResult(person);
+            // return new JsonResult(person);
+
+            return Json(person);
+        }
+
+
+        [Route("file-download1")]
+        public VirtualFileResult FileDownload1() // wwwroot
+        {
+            return new VirtualFileResult("/text.pdf", "application/pdf");
+        }
+
+
+        // any file outside of wwwroot folder
+        [Route("file-download2")]
+        public PhysicalFileResult FileDownload2() // enter all path
+        {
+            return new PhysicalFileResult(@"C:\Users\g7m7t\Downloads\text.pdf", "application/pdf");
+        }
+
+
+        // Usually use when need Image from Database   Need byte
+        [Route("file-download3")]
+        public FileContentResult FileDownload3() // enter all path
+        {
+            byte[] bytes = System.IO.File.ReadAllBytes(@"C:\Users\g7m7t\Downloads\text.pdf");
+
+            return new FileContentResult(bytes, "application/pdf");
         }
     }
 }
