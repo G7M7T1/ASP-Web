@@ -93,7 +93,19 @@ namespace ControllersExample.Controllers
 
             // return new FileContentResult(bytes, "application/pdf");
 
-            return File(bytes, "application/pdf")
+            return File(bytes, "application/pdf");
+        }
+
+
+        // IActionResult for all
+        [Route("file-download4")]
+        public IActionResult FileDownload4() // enter all path
+        {
+            byte[] bytes = System.IO.File.ReadAllBytes(@"C:\Users\g7m7t\Downloads\text.pdf");
+
+            // return new FileContentResult(bytes, "application/pdf");
+
+            return File(bytes, "application/pdf");
         }
     }
 }

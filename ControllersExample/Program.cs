@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
+
 
 /*// Old Way
 app.UseRouting();
