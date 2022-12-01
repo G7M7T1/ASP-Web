@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "aVPuyjNA5e5M+oqCJQJ0+e7ZvCND9rvNTkn7vTYw6Vg=",
+  "Hash": "CjGdI4TkMMqvFoF9nhi3lk4H17Uw7GaOSGORIjlu1DE=",
   "Source": "IActionResultExample",
   "BasePath": "_content/IActionResultExample",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "IActionResultExample\\wwwroot",
+      "Source": "IActionResultExample",
+      "ContentRoot": "C:\\Projects\\ASP Web\\IActionResultExample\\wwwroot\\",
+      "BasePath": "_content/IActionResultExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projects\\ASP Web\\IActionResultExample\\wwwroot\\text.pdf",
+      "SourceId": "IActionResultExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\ASP Web\\IActionResultExample\\wwwroot\\",
+      "BasePath": "_content/IActionResultExample",
+      "RelativePath": "text.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\text.pdf"
+    }
+  ]
 }

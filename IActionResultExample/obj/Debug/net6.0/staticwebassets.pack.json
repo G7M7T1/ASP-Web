@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Projects\\ASP Web\\IActionResultExample\\wwwroot\\text.pdf",
+      "PackagePath": "staticwebassets\\text.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.IActionResultExample.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.IActionResultExample.props",
+      "PackagePath": "build\\IActionResultExample.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.IActionResultExample.props",
+      "PackagePath": "buildMultiTargeting\\IActionResultExample.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.IActionResultExample.props",
+      "PackagePath": "buildTransitive\\IActionResultExample.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

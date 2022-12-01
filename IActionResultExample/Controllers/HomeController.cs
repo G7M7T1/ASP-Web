@@ -5,7 +5,7 @@ namespace IActionResultExample.Controllers
     public class HomeController : Controller
     {
         [Route("book")]
-        public IActionResult Index(int? bookid)
+        public IActionResult Index([FromRoute]int? bookid)
         {
             if (bookid.HasValue == false)
             {

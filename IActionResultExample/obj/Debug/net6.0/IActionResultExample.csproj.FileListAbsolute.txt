@@ -24,3 +24,4 @@ C:\Projects\ASP Web\IActionResultExample\obj\Debug\net6.0\refint\IActionResultEx
 C:\Projects\ASP Web\IActionResultExample\obj\Debug\net6.0\IActionResultExample.pdb
 C:\Projects\ASP Web\IActionResultExample\obj\Debug\net6.0\IActionResultExample.genruntimeconfig.cache
 C:\Projects\ASP Web\IActionResultExample\obj\Debug\net6.0\ref\IActionResultExample.dll
+C:\Projects\ASP Web\IActionResultExample\bin\Debug\net6.0\IActionResultExample.staticwebassets.runtime.json
