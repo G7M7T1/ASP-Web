@@ -5,9 +5,9 @@ namespace IActionResultExample.Controllers
     public class HomeController : Controller
     {
         [Route("book")]
-        public IActionResult Index()
+        public IActionResult Index(int? bookid)
         {
-            if (!Request.Query.ContainsKey("bookid"))
+            if (bookid.HasValue == false)
             {
                 // Response.StatusCode = 400;
                 // return Content("Book Id is not supplied");
@@ -51,6 +51,17 @@ namespace IActionResultExample.Controllers
 
             // moved Permanently
             // return new RedirectToActionResult("Books", "Store", new {}, permanent: true);
+
+
+            // must be local url
+            // return new LocalRedirectResult($"store/books/{bookId}, true");
+            // return LocalRedirect($"store/books/{bookId}");
+            // return LocalRedirectPermanent($"store/books/{bookId}");
+
+
+            // TO Other Url
+            // return Redirect($"store/books/{bookId}");
+            // return RedirectPermanent($"store/books/{bookId}");
         }
     }
 }
