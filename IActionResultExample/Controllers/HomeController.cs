@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IActionResultExample.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IActionResultExample.Controllers
 {
     public class HomeController : Controller
     {
         [Route("book")]
-        public IActionResult Index([FromRoute]int? bookid)
+        public IActionResult Index([FromRoute]int? bookid, Book book)
         {
             if (bookid.HasValue == false)
             {
