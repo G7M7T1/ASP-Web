@@ -1,7 +1,10 @@
-﻿namespace ModelValidations.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ModelValidations.Models
 {
     public class Person
     {
+        [Required]
         public string? PersonName { get; set; }
 
         public string? Email { get; set; }
@@ -16,7 +19,7 @@
 
         public override string ToString()
         {
-            return $"{Person}";
+            return $"Person Name: {PersonName}";
         }
     }
 }
