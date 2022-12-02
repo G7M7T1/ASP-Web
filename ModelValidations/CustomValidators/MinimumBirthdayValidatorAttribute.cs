@@ -11,7 +11,7 @@ namespace ModelValidations.CustomValidators
                 DateTime date = (DateTime)value;
                 if (date.Year <= DateTime.Now.Year - 130)
                 {
-                    return new ValidationResult($"Your Date Of Birth Can Not Bigger Than {DateTime.Now.Year - 130}");
+                    return new ValidationResult(ErrorMessage);
                 }
 
                 else

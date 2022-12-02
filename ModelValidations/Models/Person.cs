@@ -34,8 +34,14 @@ namespace ModelValidations.Models
 
         [Required(ErrorMessage = "{0} can not be blank")]
         [DisplayName("Date Of Birth")]
-        [MinimumYearValidator]
+        [MinimumYearValidator(ErrorMessage = "Your Date Of Birth Can Not Bigger Than {0}")]
         public DateTime? DateOfBirth { get; set; }
+
+
+        public DateTime? FromDate { get; set; }
+
+        [DateRangeValidator("FromDate", ErrorMessage = "'From Date' should be older or equal to 'To date'")]
+        public DateTime? ToDate { get; set; }
 
 
         [Required(ErrorMessage = "{0} Is Required")]
