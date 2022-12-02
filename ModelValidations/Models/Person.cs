@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ModelValidations.CustomValidators;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModelValidations.Models
@@ -29,6 +30,12 @@ namespace ModelValidations.Models
         [Compare("Password", ErrorMessage = "{1} and {0} do not match")]
         [DisplayName("Confirm Password")]
         public string? Confirmpassword { get; set; }
+
+
+        [Required(ErrorMessage = "{0} can not be blank")]
+        [DisplayName("Date Of Birth")]
+        [MinimumYearValidator]
+        public DateTime? DateOfBirth { get; set; }
 
 
         [Required(ErrorMessage = "{0} Is Required")]
