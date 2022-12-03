@@ -21,7 +21,7 @@ namespace ModelValidations.Models
         [Phone(ErrorMessage = "This Must Be A Real Phone Number")]
         public string? Phone { get; set; }
 
-
+        
         [Required(ErrorMessage = "{0} can not be blank")]
         public string? Password { get; set; }
 
