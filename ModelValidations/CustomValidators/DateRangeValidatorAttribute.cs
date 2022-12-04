@@ -20,16 +20,25 @@ namespace ModelValidations.CustomValidators
 
                 PropertyInfo? otherProperty = validationContext.ObjectType.GetProperty(OtherProperty);
 
-                otherProperty?.GetValue(validationContext.ObjectInstance);
+                if (otherProperty != null)
+                {
+                    otherProperty?.GetValue(validationContext.ObjectInstance);
 
-                DateTime from_date = Convert.ToDateTime(otherProperty?.GetValue(validationContext.ObjectInstance));
+                    DateTime from_date = Convert.ToDateTime(otherProperty?.GetValue(validationContext.ObjectInstance));
+
+                    if (from_date > to_date)
+                    {
+                        return new ValidationResult(ErrorMessage, new string[] { OtherProperty, validationContext.MemberName });
+                    }
+
+                    else
+                    {
+                        return ValidationResult.Success;
+                    }
+                }
+
+                return null;
             }
-
-            else
-            {
-
-            }
-
             return null;
         }
     }
