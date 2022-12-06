@@ -10,6 +10,7 @@ namespace ModelValidations.CustomValidators
         public DateRangeValidatorAttribute(string otherProperty) 
         {
             OtherProperty = otherProperty;
+            Console.WriteLine(OtherProperty);
         }
 
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
