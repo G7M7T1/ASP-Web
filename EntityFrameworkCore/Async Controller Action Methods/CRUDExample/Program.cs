@@ -18,6 +18,7 @@ builder.Services.AddDbContext<PersonsDbContext>(options => {
 
 var app = builder.Build();
 
+
 if (builder.Environment.IsDevelopment())
 {
   app.UseDeveloperExceptionPage();
