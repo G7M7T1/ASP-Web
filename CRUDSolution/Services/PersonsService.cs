@@ -202,5 +202,34 @@ namespace Services
 
             return sortedPersons;
         }
+
+        public PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest)
+        {
+            if (personUpdateRequest == null)
+            {
+                throw new ArgumentNullException(nameof(personUpdateRequest));
+            }
+
+            // Run ValidationHelper
+            ValidationHelper.ModelValidation(personUpdateRequest);
+
+            // Get Matching Person Object To Update 
+            Person? matchingPerson = _person.FirstOrDefault(temp => temp.PersonID == personUpdateRequest.PersonID);
+
+            if (matchingPerson == null)
+            {
+                throw new ArgumentException("Given Person Id Does Not Exist");
+            }
+
+            matchingPerson.Email = personUpdateRequest.Email;
+            matchingPerson.Address = personUpdateRequest.Address;
+            matchingPerson.CountryID = personUpdateRequest.CountryID;
+            matchingPerson.PersonName = personUpdateRequest.PersonName;
+            matchingPerson.DateOfBirth = personUpdateRequest.DateOfBirth;
+            matchingPerson.Gender = personUpdateRequest.Gender.ToString();
+            matchingPerson.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
+
+            return matchingPerson.ToPersonResponse();
+        }
     }
 }

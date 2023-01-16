@@ -1,4 +1,5 @@
 ﻿using Entities;
+using ServiceContracts.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,22 @@ namespace ServiceContracts.DTO
         {
             return $"Person ID: {PersonID} | Person Name: {PersonName} | Gender: {Gender}";
 
+        }
+
+
+        public PersonUpdateRequest ToPersonUpdateRequest()
+        {
+            return new PersonUpdateRequest()
+            {
+                PersonID = this.PersonID,
+                PersonName = this.PersonName,
+                Email = this.Email,
+                DateOfBirth = this.DateOfBirth,
+                Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions), this.Gender, true),
+                Address = this.Address,
+                CountryID= this.CountryID,
+                ReceiveNewsLetters= this.ReceiveNewsLetters
+            };
         }
     }
 
