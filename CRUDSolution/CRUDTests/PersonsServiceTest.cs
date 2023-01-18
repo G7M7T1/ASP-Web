@@ -24,7 +24,7 @@ namespace CRUDTests
         public PersonsServiceTest(ITestOutputHelper testOutputHelper)
         {
             _personService = new PersonsService();
-            _countriesService = new CountriesService();
+            _countriesService = new CountriesService(false);
             _outputHelper = testOutputHelper;
         }
 
@@ -713,6 +713,68 @@ namespace CRUDTests
             PersonResponse? person_response_from_get = _personService.GetPersonByPersonID(person_response_from_update.PersonID);
 
             Assert.Equal(person_response_from_get, person_response_from_update);
+        }
+        #endregion
+
+
+        #region Delete Person
+        [Fact]
+        public void DeletePerson_ValidPersonID()
+        {
+            // Make Country
+            CountryAddRequest country_add_request = new CountryAddRequest() { CountryName = "MEX" };
+
+            // Add Country
+            CountryResponse country_response_from_add = _countriesService.AddCountry(country_add_request);
+
+            // Make Person
+            PersonAddRequest person_add_request = new PersonAddRequest()
+            {
+                PersonName = "MeLuisn",
+                Address = "MeLuisn's Home",
+                Email = "MeLuisn@gmail.com",
+                DateOfBirth = DateTime.Parse("2000-07-07"),
+                CountryID = country_response_from_add.CountryId,
+                ReceiveNewsLetters = true,
+                Gender = GenderOptions.Male
+            };
+
+            // Add Person
+            PersonResponse person_response_from_add = _personService.AddPerson(person_add_request);
+
+            bool isDeleted = _personService.DeletePerson(person_response_from_add.PersonID);
+
+            Assert.True(isDeleted);
+        }
+
+
+        [Fact]
+        public void DeletePerson_InValidPersonID()
+        {
+            // Make Country
+            CountryAddRequest country_add_request = new CountryAddRequest() { CountryName = "MEX" };
+
+            // Add Country
+            CountryResponse country_response_from_add = _countriesService.AddCountry(country_add_request);
+
+            // Make Person
+            PersonAddRequest person_add_request = new PersonAddRequest()
+            {
+                PersonName = "MeLuisn",
+                Address = "MeLuisn's Home",
+                Email = "MeLuisn@gmail.com",
+                DateOfBirth = DateTime.Parse("2000-07-07"),
+                CountryID = country_response_from_add.CountryId,
+                ReceiveNewsLetters = true,
+                Gender = GenderOptions.Male
+            };
+
+            // Add Person
+            PersonResponse person_response_from_add = _personService.AddPerson(person_add_request);
+
+            bool isDeleted = _personService.DeletePerson(Guid.NewGuid());
+
+            Assert.False(isDeleted);
         }
         #endregion
     }
