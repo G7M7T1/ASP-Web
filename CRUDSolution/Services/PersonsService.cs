@@ -231,6 +231,12 @@ namespace Services
                     break;
 
 
+                case nameof(PersonResponse.Age):
+                    matchingPersons = allPersons.Where(temp => (temp.Age != null) ?
+                    temp.Age.Value.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase) : true).ToList();
+                    break;
+
+
                 default:
                     matchingPersons= allPersons;
                     break;

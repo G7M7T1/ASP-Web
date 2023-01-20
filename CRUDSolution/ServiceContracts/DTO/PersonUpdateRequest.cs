@@ -20,6 +20,7 @@ namespace ServiceContracts.DTO
         [Required(ErrorMessage = "Person Name Cannot Be Blank")]
         public string? PersonName { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
 
         public GenderOptions? Gender { get; set; }
