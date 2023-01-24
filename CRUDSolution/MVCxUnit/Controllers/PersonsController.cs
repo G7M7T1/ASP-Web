@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
+using Services;
 
 namespace MVCxUnit.Controllers
 {
@@ -136,6 +137,30 @@ namespace MVCxUnit.Controllers
 
                 return View();
             }
+        }
+
+        [HttpGet]
+        [Route("[action]/{personID}")]
+        public IActionResult Delete(Guid? personID)
+        {
+            PersonResponse? personResponse = _personService.GetPersonByPersonID(personID);
+            if (personResponse == null)
+                return RedirectToAction("Index");
+
+            return View(personResponse);
+        }
+
+
+        [HttpPost]
+        [Route("[action]/{personID}")]
+        public IActionResult Delete(PersonUpdateRequest personUpdateResult)
+        {
+            PersonResponse? personResponse = _personService.GetPersonByPersonID(personUpdateResult.PersonID);
+            if (personResponse == null)
+                return RedirectToAction("Index");
+
+            _personService.DeletePerson(personUpdateResult.PersonID);
+            return RedirectToAction("Index");
         }
     }
 }
